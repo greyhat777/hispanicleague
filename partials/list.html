@@ -1,0 +1,38 @@
+<section class="athletepage">
+
+	<div class="search">
+		<h1>Athlete Directory</h1>
+		<label>search:</label>
+		<input ng-model="query" placeholder="Search for athletes " autofocus>
+		<label class="formgroup">by: 
+			<select ng-model="athleteOrder">
+				<option value="name">Name</option>
+				<option value="fullname">Full Name</option>
+			</select>
+		</label>
+
+		<label class="formgroup">
+			<input type="radio" ng-model="direction" name="direction" checked>
+			ascending
+		</label>
+		<label class="formgroup">
+			<input type="radio" ng-model="direction" name="direction" value="reverse">
+			descending
+		</label>	
+		
+	</div>
+
+	<ul class="athletelist">
+		<li class="athlete" ng-repeat="item in athletes | filter: query | orderBy: athleteOrder:direction " >
+			<a href="#/details/{{athletes.indexOf(item)}}">
+			<img ng-src="images/{{item.image}}.jpg" alt="photo of {{item.name}}">
+			<div class ="info">
+				<h2>{{item.name}}</h2>
+				<h3>{{item.fullname}}</h3>
+			</div>
+			</a>
+		</li>
+	</ul>
+
+
+</section>

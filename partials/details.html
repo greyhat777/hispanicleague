@@ -1,0 +1,13 @@
+<section class="athleteinfo">
+	<div class="athlete" ng-model="athletes">
+		<a href="#/details/{{prevItem}}">&lt;</a>
+		<a href="#/details/{{nextItem}}">&gt;</a>
+		<h1>{{athletes[whichItem].name}}</h1>
+		<div class="info">
+			<h3>{{athletes[whichItem].fullname}}</h3>
+			<img ng-src="images/{{athletes[whichItem].image}}.jpg" alt="Photo of {{athlete[whichItem].name}}">
+			<div class="team">{{athletes[whichItem].team}}</div>
+		</div>
+	</div>
+	<a ng-href="#/list">&laquo; Back to search</a>
+</section>
